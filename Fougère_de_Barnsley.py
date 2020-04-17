@@ -31,8 +31,8 @@ class Main():
                     pg.quit()
             self.zoom()
             self.cst_zoom+=0.05#itering the cst zoom
-            for i in range (0,len(self.basex)):#drawing points with little rectangles 
-                pg.draw.rect(self.screen, self.liste_couleur[rd.randint(0,4)], (abs((self.basex2[i])-1000),(abs(self.basey2[i]-1000)),2,2))
+            for i in range (0,len(self.basex)):#drawing points with pixels
+                   self.screen.set_at((int(self.basex2[i]), int(self.basey2[i])),((3 * self.basex[i]) % 256, (1 * self.basex[i]) % 256, (10 * self.basey[i]) % 256))
             pg.display.flip()
         
     def set_points(self):#fill liste y and list x
